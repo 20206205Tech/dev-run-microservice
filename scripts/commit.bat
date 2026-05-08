@@ -25,6 +25,3 @@ start "Payment Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "git n
 :: 5. Khởi động Frontend UI (Không dùng Doppler)
 cd /d "C:\Users\Admin\Documents\GitHub\code-fe-ui"
 start "Frontend UI" "C:\Program Files\Git\bin\bash.exe" --login -i -c "git nghia-git-commit-no-verify; exec bash"
-
-:: 7. Mở giao diện trên trình duyệt mặc định
-start http://localhost:3000
