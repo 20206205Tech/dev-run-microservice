@@ -25,4 +25,4 @@ for /D %%F in ("%ROOT_DIR%\*") do (
 echo.
 echo ========================================================
 echo Da xu ly xong tat ca cac folder!
-pause
+@REM pause
