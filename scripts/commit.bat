@@ -3,7 +3,7 @@
 
 
 
-timeout /t 6 /nobreak
+timeout /t 3 /nobreak
 
 cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 git nghia-git-commit-no-verify
