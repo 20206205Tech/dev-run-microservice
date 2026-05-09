@@ -13,7 +13,7 @@ echo "|__/     |__/|__/ \_______/|__/       \______/ |_______/  \_______/|__/   
 
 
 
-timeout /t 6 /nobreak
+timeout /t 10 /nobreak
 @REM timeout /t 60 /nobreak
 @REM timeout /t 30 /nobreak
 
@@ -31,40 +31,36 @@ timeout /t 6 /nobreak
 @REM echo.
 @REM echo Dang bat dau khoi dong cac services...
 
-timeout /t 6 /nobreak
+timeout /t 10 /nobreak
 
 :: 3. Khởi động code-conversation-service
 cd /d "C:\Users\Admin\Documents\GitHub\code-conversation-service"
 start "Conversation Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
-timeout /t 6 /nobreak
+timeout /t 10 /nobreak
 
 :: 4. Khởi động code-payment-service
 cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service"
 start "Payment Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
-timeout /t 6 /nobreak
+timeout /t 10 /nobreak
 
-:: 5. Khởi động Frontend UI (Không dùng Doppler)
-cd /d "C:\Users\Admin\Documents\GitHub\code-fe-ui"
-start "Frontend UI" "C:\Program Files\Git\bin\bash.exe" --login -i -c "npm run start:dev; exec bash"
-timeout /t 6 /nobreak
 
 
 :: 1. Khởi động code-chatbot-service
 cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
-timeout /t 6 /nobreak
+timeout /t 10 /nobreak
 
 :: 1. Khởi động code-chatbot-service
 cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python voice_worker.py dev; exec bash"
-timeout /t 6 /nobreak
+timeout /t 10 /nobreak
 
 :: 2. Khởi động code-document-service
 cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
 start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
 
-timeout /t 6 /nobreak
+timeout /t 10 /nobreak
 
 @REM :: 7. Mở giao diện trên trình duyệt mặc định
 @REM start http://localhost:3000
@@ -112,9 +108,22 @@ if errorlevel 1 (
 )
 @REM echo   =^> Document Service OK!
 
+
+
+
 :: Khi đến được dòng này, nghĩa là CẢ 4 service đều đã chạy
 @REM echo.
 @REM echo Tat ca service da khoi dong xong! Tien hanh mo giao dien Frontend...
+
+
+
+
+
+:: 5. Khởi động Frontend UI (Không dùng Doppler)
+cd /d "C:\Users\Admin\Documents\GitHub\code-fe-ui"
+start "Frontend UI" "C:\Program Files\Git\bin\bash.exe" --login -i -c "npm run start:dev; exec bash"
+timeout /t 10 /nobreak
+
 
 :: Chỉ mở 1 URL duy nhất
 start http://localhost:3000

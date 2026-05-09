@@ -22,7 +22,7 @@ for /D %%F in ("%ROOT_DIR%\*") do (
     popd
 )
 
-echo.
-echo ========================================================
-echo Da xu ly xong tat ca cac folder!
-@REM pause
+@REM echo.
+@REM echo ========================================================
+@REM echo Da xu ly xong tat ca cac folder!
+@REM @REM pause
