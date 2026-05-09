@@ -31,83 +31,90 @@ timeout /t 6 /nobreak
 @REM echo.
 @REM echo Dang bat dau khoi dong cac services...
 
+timeout /t 6 /nobreak
 
 :: 3. Khởi động code-conversation-service
 cd /d "C:\Users\Admin\Documents\GitHub\code-conversation-service"
 start "Conversation Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
+timeout /t 6 /nobreak
 
 :: 4. Khởi động code-payment-service
 cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service"
 start "Payment Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
+timeout /t 6 /nobreak
 
 :: 5. Khởi động Frontend UI (Không dùng Doppler)
 cd /d "C:\Users\Admin\Documents\GitHub\code-fe-ui"
 start "Frontend UI" "C:\Program Files\Git\bin\bash.exe" --login -i -c "npm run start:dev; exec bash"
+timeout /t 6 /nobreak
 
 
 :: 1. Khởi động code-chatbot-service
 cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+timeout /t 6 /nobreak
 
 :: 1. Khởi động code-chatbot-service
 cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python voice_worker.py dev; exec bash"
+timeout /t 6 /nobreak
 
 :: 2. Khởi động code-document-service
 cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
 start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
 
+timeout /t 6 /nobreak
 
 @REM :: 7. Mở giao diện trên trình duyệt mặc định
 @REM start http://localhost:3000
 
 
-echo Dang kiem tra trang thai cac service...
+@REM echo Dang kiem tra trang thai cac service...
 
 :: 1. Chờ Payment Service (33001)
-echo - Dang cho Payment Service...
+@REM echo - Dang cho Payment Service...
 :wait_payment
 curl -s http://localhost:33001/code-payment-service/docs >nul
 if errorlevel 1 (
     timeout /t 2 /nobreak >nul
     goto wait_payment
 )
-echo   =^> Payment Service OK!
+@REM echo   =^> Payment Service OK!
 
 :: 2. Chờ Conversation Service (33002)
-echo - Dang cho Conversation Service...
+@REM echo - Dang cho Conversation Service...
 :wait_conversation
 curl -s http://localhost:33002/code-conversation-service/docs >nul
 if errorlevel 1 (
     timeout /t 2 /nobreak >nul
     goto wait_conversation
 )
-echo   =^> Conversation Service OK!
+@REM echo   =^> Conversation Service OK!
 
 :: 3. Chờ Chatbot Service (52001)
-echo - Dang cho Chatbot Service...
+@REM echo - Dang cho Chatbot Service...
 :wait_chatbot
 curl -s http://localhost:52001/code-chatbot-service/docs >nul
 if errorlevel 1 (
     timeout /t 2 /nobreak >nul
     goto wait_chatbot
 )
-echo   =^> Chatbot Service OK!
+@REM echo   =^> Chatbot Service OK!
 
 :: 4. Chờ Document Service (52002)
-echo - Dang cho Document Service...
+@REM echo - Dang cho Document Service...
 :wait_document
 curl -s http://localhost:52002/code-document-service/docs >nul
 if errorlevel 1 (
     timeout /t 2 /nobreak >nul
     goto wait_document
 )
-echo   =^> Document Service OK!
+@REM echo   =^> Document Service OK!
 
 :: Khi đến được dòng này, nghĩa là CẢ 4 service đều đã chạy
-echo.
-echo Tat ca service da khoi dong xong! Tien hanh mo giao dien Frontend...
+@REM echo.
+@REM echo Tat ca service da khoi dong xong! Tien hanh mo giao dien Frontend...
 
 :: Chỉ mở 1 URL duy nhất
 start http://localhost:3000
