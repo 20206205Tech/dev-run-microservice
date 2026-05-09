@@ -6,10 +6,10 @@ set "ROOT_DIR=C:\Users\Admin\Documents\GitHub"
 
 :: Lặp qua tất cả các thư mục con cấp 1 bên trong ROOT_DIR
 for /D %%F in ("%ROOT_DIR%\*") do (
-    echo.
-    echo ========================================================
+    @REM echo.
+    @REM echo ========================================================
     echo Đang xu ly folder: %%F
-    echo ========================================================
+    @REM echo ========================================================
     
     :: Di chuyển vào thư mục con
     pushd "%%F"
