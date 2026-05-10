@@ -1,5 +1,5 @@
 @echo off
-timeout /t 3 /nobreak
+timeout /t 1 /nobreak
 
 :: Đặt đường dẫn thư mục gốc
 set "ROOT_DIR=C:\Users\Admin\Documents\GitHub"
