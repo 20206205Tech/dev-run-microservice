@@ -59,9 +59,9 @@ timeout /t 10 /nobreak
 
 
 
-cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service"
-start "Payment Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
-timeout /t 10 /nobreak
+@REM cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service"
+@REM start "Payment Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
+@REM timeout /t 10 /nobreak
 
 
 
@@ -70,9 +70,9 @@ timeout /t 10 /nobreak
 
 
 
-cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
-start "code-document-worker" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A  worker.celery_app worker --pool=solo --loglevel=info; exec bash"
-timeout /t 10 /nobreak
+@REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
+@REM start "code-document-worker" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A  worker.celery_app worker --pool=solo --loglevel=info; exec bash"
+@REM timeout /t 10 /nobreak
 
 
 
@@ -83,9 +83,9 @@ timeout /t 10 /nobreak
 
 
 
-cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
-start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
-timeout /t 10 /nobreak
+@REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
+@REM start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+@REM timeout /t 10 /nobreak
 
 
 
@@ -123,40 +123,40 @@ timeout /t 10 /nobreak
 
 
 
-:wait_payment
-curl -s http://localhost:33001/code-payment-service/docs >nul
-if errorlevel 1 (
-    timeout /t 2 /nobreak >nul
-    goto wait_payment
-)
+@REM :wait_payment
+@REM curl -s http://localhost:33001/code-payment-service/docs >nul
+@REM if errorlevel 1 (
+@REM     timeout /t 2 /nobreak >nul
+@REM     goto wait_payment
+@REM )
 
 
 
-:wait_conversation
-curl -s http://localhost:33002/code-conversation-service/docs >nul
-if errorlevel 1 (
-    timeout /t 2 /nobreak >nul
-    goto wait_conversation
-)
+@REM :wait_conversation
+@REM curl -s http://localhost:33002/code-conversation-service/docs >nul
+@REM if errorlevel 1 (
+@REM     timeout /t 2 /nobreak >nul
+@REM     goto wait_conversation
+@REM )
 
 
 
 
-:wait_chatbot
-curl -s http://localhost:52001/code-chatbot-service/docs >nul
-if errorlevel 1 (
-    timeout /t 2 /nobreak >nul
-    goto wait_chatbot
-)
+@REM :wait_chatbot
+@REM curl -s http://localhost:52001/code-chatbot-service/docs >nul
+@REM if errorlevel 1 (
+@REM     timeout /t 2 /nobreak >nul
+@REM     goto wait_chatbot
+@REM )
 
 
 
-:wait_document
-curl -s http://localhost:52002/code-document-service/docs >nul
-if errorlevel 1 (
-    timeout /t 2 /nobreak >nul
-    goto wait_document
-)
+@REM :wait_document
+@REM curl -s http://localhost:52002/code-document-service/docs >nul
+@REM if errorlevel 1 (
+@REM     timeout /t 2 /nobreak >nul
+@REM     goto wait_document
+@REM )
 
 
 
