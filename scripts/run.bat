@@ -71,7 +71,7 @@ timeout /t 10 /nobreak
 
 
 cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
-start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A  worker.celery_app worker --pool=solo --loglevel=info; exec bash"
+start "code-document-worker" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A  worker.celery_app worker --pool=solo --loglevel=info; exec bash"
 timeout /t 10 /nobreak
 
 
