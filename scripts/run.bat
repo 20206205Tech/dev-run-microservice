@@ -58,10 +58,7 @@ cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python voice_worker.py dev; exec bash"
 timeout /t 10 /nobreak
 
-:: 1. Khởi động code-chatbot-service
-cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
-start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A  worker.celery_app worker --pool=solo --loglevel=info; exec bash"
-timeout /t 10 /nobreak
+
 
 
 
@@ -74,12 +71,51 @@ timeout /t 10 /nobreak
 
 
 
+:: 1. Khởi động code-chatbot-service
+cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
+start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A  worker.celery_app worker --pool=solo --loglevel=info; exec bash"
+timeout /t 10 /nobreak
+
+
+
+
+
+
 :: 2. Khởi động code-document-service
 cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
 start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
-
-
 timeout /t 10 /nobreak
+
+
+
+
+
+
+
+
+
+
+
+
+:: 2. Khởi động code-document-service
+cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-phapdien-service"
+start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+timeout /t 10 /nobreak
+
+
+
+
+:: 2. Khởi động code-document-service
+cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-vbplnew-service"
+start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+timeout /t 10 /nobreak
+
+
+
+
+
+
+
 
 @REM :: 7. Mở giao diện trên trình duyệt mặc định
 @REM start http://localhost:3000
