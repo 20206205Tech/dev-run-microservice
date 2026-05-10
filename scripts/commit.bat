@@ -9,11 +9,14 @@ set "ROOT_DIR=C:\Users\Admin\Documents\GitHub"
 for /D %%F in ("%ROOT_DIR%\*") do (
     :: Chỉ thực thi nếu folder chứa thư mục .git
     if exist "%%F\.git" (
-        echo Đang xu ly: %%~nxF
+
+        @REM echo Đang xu ly: %%~nxF
+
         pushd "%%F"
         
         :: Chạy 1 lần (trừ khi bạn cố tình muốn chạy 2 lần)
         git nghia-git-commit-no-verify
+        
         git nghia-git-commit-no-verify
         
         popd
