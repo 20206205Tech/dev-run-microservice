@@ -20,11 +20,6 @@ timeout /t 10 /nobreak
 cd /d "C:\Users\Admin\Documents\GitHub\code-conversation-service"
 start "Conversation Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
 
-
-cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
-start "persona Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
-
-
 cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 timeout /t 10 /nobreak
@@ -38,25 +33,30 @@ start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppl
 @REM timeout /t 10 /nobreak
 
 
+
+
+
+cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
+start "persona Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+
+
+
+
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
 @REM start "code-document-worker" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A  worker.celery_app worker --pool=solo --loglevel=info; exec bash"
 @REM timeout /t 10 /nobreak
-
-
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
 @REM start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
-@REM timeout /t 10 /nobreak
 
 
 
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-phapdien-service"
 @REM start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
-@REM timeout /t 10 /nobreak
-
-
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-vbplnew-service"
 @REM start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
-@REM timeout /t 10 /nobreak
+
+
+
 
 @REM :wait_payment
 @REM curl -s http://localhost:33001/code-payment-service/docs >nul
