@@ -1,11 +1,6 @@
 @echo off
 
-
-
 if not "%1" == "max" start /MAX cmd /c %0 max & exit/b
-
-
-
 
 
 echo " /$$      /$$ /$$                                                                        /$$                    "
@@ -22,53 +17,18 @@ echo "|__/     |__/|__/ \_______/|__/       \______/ |_______/  \_______/|__/   
 timeout /t 10 /nobreak
 
 
-
-
-
-
-
-
-
 cd /d "C:\Users\Admin\Documents\GitHub\code-conversation-service"
 start "Conversation Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
-timeout /t 10 /nobreak
 
 
-
-
-
-
-
+cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
+start "persona Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
 
 cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 timeout /t 10 /nobreak
-
-
-
-
-
-
-cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python voice_worker.py dev; exec bash"
-timeout /t 10 /nobreak
-
-
-
-
-
-
-
-
-
-
-
-
-cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
-start "persona Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
-timeout /t 10 /nobreak
-
 
 
 
@@ -78,23 +38,9 @@ timeout /t 10 /nobreak
 @REM timeout /t 10 /nobreak
 
 
-
-
-
-
-
-
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
 @REM start "code-document-worker" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A  worker.celery_app worker --pool=solo --loglevel=info; exec bash"
 @REM timeout /t 10 /nobreak
-
-
-
-
-
-
-
-
 
 
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
@@ -103,39 +49,14 @@ timeout /t 10 /nobreak
 
 
 
-
-
-
-
-
-
-
-
-
-   
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-phapdien-service"
 @REM start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 @REM timeout /t 10 /nobreak
 
 
-
-
-
-
-
-
-
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-vbplnew-service"
 @REM start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 @REM timeout /t 10 /nobreak
-
-
-
-
-
-
-
-
 
 @REM :wait_payment
 @REM curl -s http://localhost:33001/code-payment-service/docs >nul
@@ -173,22 +94,7 @@ timeout /t 10 /nobreak
 @REM )
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 cd /d "C:\Users\Admin\Documents\GitHub\code-fe-ui"
 start "Frontend UI" "C:\Program Files\Git\bin\bash.exe" --login -i -c "npm run start:dev; exec bash"
 timeout /t 10 /nobreak
-
-
-
 start http://localhost:3000
