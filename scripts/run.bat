@@ -66,7 +66,7 @@ timeout /t 10 /nobreak
 
 
 cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
-start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+start "persona Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 timeout /t 10 /nobreak
 
 
