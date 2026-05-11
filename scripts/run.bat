@@ -13,48 +13,46 @@ echo "| $$ \/  | $$| $$|  $$$$$$$| $$      |  $$$$$$/ /$$$$$$$/|  $$$$$$$| $$   
 echo "|__/     |__/|__/ \_______/|__/       \______/ |_______/  \_______/|__/          \_/    |__/ \_______/ \_______/"
 
 
-
 timeout /t 10 /nobreak
 
 
 cd /d "C:\Users\Admin\Documents\GitHub\code-conversation-service"
-start "Conversation Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
+start "conversation-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
+
 
 cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
-start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+start "chatbot-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 timeout /t 10 /nobreak
-@REM start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python voice_worker.py dev; exec bash"
-start "Chatbot Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python voice.py dev; exec bash"
+start "voice" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python voice.py dev; exec bash"
 
 
 
 
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service"
-@REM start "Payment Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
-@REM timeout /t 10 /nobreak
+@REM start "payment-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
 
 
 
 
 
 cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
-start "persona Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
 
 
 
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
-@REM start "code-document-worker" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A  worker.celery_app worker --pool=solo --loglevel=info; exec bash"
+@REM start "document-worker" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A  worker.celery_app worker --pool=solo --loglevel=info; exec bash"
 @REM timeout /t 10 /nobreak
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
-@REM start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+@REM start "document-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
 
 
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-phapdien-service"
-@REM start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+@REM start "phapdien" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-vbplnew-service"
-@REM start "Document Service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+@REM start "vbplnew" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
 
 
