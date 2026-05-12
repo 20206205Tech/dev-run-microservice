@@ -95,5 +95,5 @@ start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppl
 
 cd /d "C:\Users\Admin\Documents\GitHub\code-fe-ui"
 start "Frontend UI" "C:\Program Files\Git\bin\bash.exe" --login -i -c "npm run start:dev; exec bash"
-timeout /t 10 /nobreak
+timeout /t 30 /nobreak
 start http://localhost:3000
