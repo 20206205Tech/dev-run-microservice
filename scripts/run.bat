@@ -44,6 +44,8 @@ start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppl
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
 @REM start "document-worker" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A  worker.celery_app worker --pool=solo --loglevel=info; exec bash"
 @REM timeout /t 10 /nobreak
+
+
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
 @REM start "document-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
