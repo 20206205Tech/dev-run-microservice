@@ -15,8 +15,8 @@ def process_repo(repo_path):
         # Chạy lần 1 (cwd=repo_path thay thế cho việc pushd/popd)
         subprocess.run(cmd, cwd=repo_path, capture_output=True, text=True)
         
-        # Chạy lần 2
-        subprocess.run(cmd, cwd=repo_path, capture_output=True, text=True)
+        # # Chạy lần 2
+        # subprocess.run(cmd, cwd=repo_path, capture_output=True, text=True)
         
         return f"✅ Đã xử lý xong: {repo_path.name}"
     except Exception as e:
