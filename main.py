@@ -32,9 +32,9 @@ def create_symlinks_for_scripts():
         dst_link = os.path.join(desktop_dir, filename)
 
         try:
-            # # Nếu trên Desktop đã có sẵn file/link trùng tên, ta cần xóa nó đi trước khi tạo mới
-            # if os.path.exists(dst_link) or os.path.islink(dst_link):
-            #     os.remove(dst_link)
+            # Nếu trên Desktop đã có sẵn file/link trùng tên, ta cần xóa nó đi trước khi tạo mới
+            if os.path.exists(dst_link) or os.path.islink(dst_link):
+                os.remove(dst_link)
 
             # Tạo symbolic link
             os.symlink(src_file, dst_link)
