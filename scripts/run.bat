@@ -20,9 +20,19 @@ cd /d "C:\Users\Admin\Documents\GitHub\code-conversation-service"
 start "conversation-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
 
 
+
+
+@REM cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service"
+@REM start "payment-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
+
+
+
+
+
+
 cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 start "chatbot-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
-timeout /t 10 /nobreak
+timeout /t 50 /nobreak
 start "voice" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python voice.py dev; exec bash"
 
 
@@ -41,11 +51,6 @@ start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppl
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
 @REM start "document-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
-
-
-
-@REM cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service"
-@REM start "payment-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
 
 
 
@@ -97,5 +102,5 @@ start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppl
 
 cd /d "C:\Users\Admin\Documents\GitHub\code-fe-ui"
 start "Frontend UI" "C:\Program Files\Git\bin\bash.exe" --login -i -c "npm run start:dev; exec bash"
-timeout /t 30 /nobreak
+timeout /t 100 /nobreak
 start http://localhost:3000
