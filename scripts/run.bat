@@ -73,22 +73,22 @@ start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "doppl
 
 
 
-@REM :wait_conversation
-@REM curl -s http://localhost:33002/code-conversation-service/docs >nul
-@REM if errorlevel 1 (
-@REM     timeout /t 2 /nobreak >nul
-@REM     goto wait_conversation
-@REM )
+:wait_conversation
+curl -s http://localhost:33002/code-conversation-service/docs >nul
+if errorlevel 1 (
+    timeout /t 2 /nobreak >nul
+    goto wait_conversation
+)
 
 
 
 
-@REM :wait_chatbot
-@REM curl -s http://localhost:52001/code-chatbot-service/docs >nul
-@REM if errorlevel 1 (
-@REM     timeout /t 2 /nobreak >nul
-@REM     goto wait_chatbot
-@REM )
+:wait_chatbot
+curl -s http://localhost:52001/code-chatbot-service/docs >nul
+if errorlevel 1 (
+    timeout /t 2 /nobreak >nul
+    goto wait_chatbot
+)
 
 
 
