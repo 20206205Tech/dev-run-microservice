@@ -103,5 +103,6 @@ if errorlevel 1 (
 timeout /t 10 /nobreak
 cd /d "C:\Users\Admin\Documents\GitHub\code-fe-ui"
 start "Frontend UI" "C:\Program Files\Git\bin\bash.exe" --login -i -c "npm run start:dev; exec bash"
-timeout /t 100 /nobreak
+timeout /t 10 /nobreak
+@REM timeout /t 100 /nobreak
 start http://localhost:3000
