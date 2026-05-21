@@ -63,6 +63,13 @@ if errorlevel 1 (
  goto wait_chatbot
 )
 
+:wait_persona
+curl -s http://localhost:52003/code-persona-service/docs >nul
+if errorlevel 1 (
+ timeout /t 2 /nobreak >nul
+ goto wait_persona
+)
+
 @REM :wait_document
 @REM curl -s http://localhost:52002/code-document-service/docs >nul
 @REM if errorlevel 1 (
