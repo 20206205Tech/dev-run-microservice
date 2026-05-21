@@ -13,9 +13,42 @@ echo "| $$ \/  | $$| $$|  $$$$$$$| $$      |  $$$$$$/ /$$$$$$$/|  $$$$$$$| $$   
 echo "|__/     |__/|__/ \_______/|__/       \______/ |_______/  \_______/|__/          \_/    |__/ \_______/ \_______/"
 
 
+
+timeout /t 5 /nobreak
+cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
+start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+
+
+
+
+
+
+:wait_persona
+curl -s http://localhost:52003/code-persona-service/docs >nul
+if errorlevel 1 (
+ timeout /t 2 /nobreak >nul
+ goto wait_persona
+)
+
+
+
+
+
+
 timeout /t 5 /nobreak
 cd /d "C:\Users\Admin\Documents\GitHub\code-conversation-service"
 start "conversation-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " npm i && doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
+
+
+:wait_conversation
+curl -s http://localhost:33002/code-conversation-service/docs >nul
+if errorlevel 1 (
+ timeout /t 2 /nobreak >nul
+ goto wait_conversation
+)
+
+
+
 
 @REM timeout /t 5 /nobreak
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service"
@@ -24,12 +57,22 @@ start "conversation-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c "
 timeout /t 5 /nobreak
 cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 start "chatbot-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+
+
+
+:wait_chatbot
+curl -s http://localhost:52001/code-chatbot-service/docs >nul
+if errorlevel 1 (
+ timeout /t 2 /nobreak >nul
+ goto wait_chatbot
+)
+
+
+
+
+
 timeout /t 50 /nobreak
 start "voice" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python voice_worker.py dev; exec bash"
-
-timeout /t 5 /nobreak
-cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
-start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
 @REM start "document-worker" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A worker.celery_app worker --pool=solo --loglevel=info; exec bash"
@@ -49,26 +92,7 @@ start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv s
 @REM goto wait_payment
 @REM )
 
-:wait_conversation
-curl -s http://localhost:33002/code-conversation-service/docs >nul
-if errorlevel 1 (
- timeout /t 2 /nobreak >nul
- goto wait_conversation
-)
 
-:wait_chatbot
-curl -s http://localhost:52001/code-chatbot-service/docs >nul
-if errorlevel 1 (
- timeout /t 2 /nobreak >nul
- goto wait_chatbot
-)
-
-:wait_persona
-curl -s http://localhost:52003/code-persona-service/docs >nul
-if errorlevel 1 (
- timeout /t 2 /nobreak >nul
- goto wait_persona
-)
 
 @REM :wait_document
 @REM curl -s http://localhost:52002/code-document-service/docs >nul
