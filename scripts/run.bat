@@ -15,14 +15,11 @@ echo "|__/     |__/|__/ \_______/|__/       \______/ |_______/  \_______/|__/   
 
 
 timeout /t 5 /nobreak
+cd /d "C:\Users\Admin\Documents\GitHub\dev-run-microservice"
+start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code .  ; exec bash"
+
 cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
 start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
-
-
-
-
-
-
 :wait_persona
 curl -s http://localhost:52003/code-persona-service/docs >nul
 if errorlevel 1 (
@@ -35,11 +32,9 @@ if errorlevel 1 (
 
 
 
-timeout /t 5 /nobreak
+@REM timeout /t 5 /nobreak
 cd /d "C:\Users\Admin\Documents\GitHub\code-conversation-service"
 start "conversation-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && npm i && doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
-
-
 :wait_conversation
 curl -s http://localhost:33002/code-conversation-service/docs >nul
 if errorlevel 1 (
@@ -54,12 +49,9 @@ if errorlevel 1 (
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service"
 @REM start "payment-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && npm i && doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
 
-timeout /t 5 /nobreak
+@REM timeout /t 5 /nobreak
 cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 start "chatbot-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
-
-
-
 :wait_chatbot
 curl -s http://localhost:52001/code-chatbot-service/docs >nul
 if errorlevel 1 (
@@ -67,11 +59,7 @@ if errorlevel 1 (
  goto wait_chatbot
 )
 
-
-
-
-
-timeout /t 50 /nobreak
+@REM timeout /t 50 /nobreak
 start "voice" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python voice_worker.py dev; exec bash"
 
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
