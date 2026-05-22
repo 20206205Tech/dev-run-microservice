@@ -16,7 +16,7 @@ echo "|__/     |__/|__/ \_______/|__/       \______/ |_______/  \_______/|__/   
 
 timeout /t 5 /nobreak
 cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
-start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
 
 
@@ -37,7 +37,7 @@ if errorlevel 1 (
 
 timeout /t 5 /nobreak
 cd /d "C:\Users\Admin\Documents\GitHub\code-conversation-service"
-start "conversation-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " npm i && doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
+start "conversation-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && npm i && doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
 
 
 :wait_conversation
@@ -52,11 +52,11 @@ if errorlevel 1 (
 
 @REM timeout /t 5 /nobreak
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service"
-@REM start "payment-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " npm i && doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
+@REM start "payment-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && npm i && doppler setup --project 20206205tech --config dev && doppler run -- npm run start:dev; exec bash"
 
 timeout /t 5 /nobreak
 cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
-start "chatbot-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+start "chatbot-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
 
 
@@ -72,18 +72,18 @@ if errorlevel 1 (
 
 
 timeout /t 50 /nobreak
-start "voice" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python voice_worker.py dev; exec bash"
+start "voice" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python voice_worker.py dev; exec bash"
 
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
-@REM start "document-worker" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A worker.celery_app worker --pool=solo --loglevel=info; exec bash"
+@REM start "document-worker" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run celery -A worker.celery_app worker --pool=solo --loglevel=info; exec bash"
 @REM timeout /t 5 /nobreak
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
-@REM start "document-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+@REM start "document-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-phapdien-service"
-@REM start "phapdien" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+@REM start "phapdien" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-vbplnew-service"
-@REM start "vbplnew" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
+@REM start "vbplnew" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
 
 @REM :wait_payment
 @REM curl -s http://localhost:33001/code-payment-service/docs >nul
@@ -104,7 +104,7 @@ start "voice" "C:\Program Files\Git\bin\bash.exe" --login -i -c " uv sync && dop
 
 timeout /t 5 /nobreak
 cd /d "C:\Users\Admin\Documents\GitHub\code-fe-ui"
-start "Frontend UI" "C:\Program Files\Git\bin\bash.exe" --login -i -c " npm i && npm run start:dev; exec bash"
+start "Frontend UI" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && npm i && npm run start:dev; exec bash"
 timeout /t 5 /nobreak
 @REM timeout /t 100 /nobreak
 start http://localhost:3000
