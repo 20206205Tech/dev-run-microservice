@@ -15,8 +15,8 @@ echo "|__/     |__/|__/ \_______/|__/       \______/ |_______/  \_______/|__/   
 
 
 timeout /t 5 /nobreak
-cd /d "C:\Users\Admin\Documents\GitHub\dev-run-microservice"
-start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code .  ; exec bash"
+@REM cd /d "C:\Users\Admin\Documents\GitHub\dev-run-microservice"
+@REM start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code .  ; exec bash"
 
 cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
 start "persona-service" "C:\Program Files\Git\bin\bash.exe" --login -i -c " code . && uv sync && doppler setup --project 20206205tech --config dev && doppler run -- uv run python main.py; exec bash"
