@@ -12,9 +12,10 @@ echo "| $$ \/  | $$| $$|  $$$$$$$| $$      |  $$$$$$/ /$$$$$$$/|  $$$$$$$| $$   
 echo "|__/     |__/|__/ \_______/|__/       \______/ |_______/  \_______/|__/          \_/    |__/ \_______/ \_______/"
 
 
+timeout /t 10 /nobreak >nul
 cd /d "C:\Users\Admin\Desktop\Nghia\gitlab\vuvannghia\note\vuvannghia-note\data"
 start "" cmd /c "code ."
-timeout /t 50 /nobreak >nul
+timeout /t 10 /nobreak >nul
 
 cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service" 
 start "" cmd /c "code ."
