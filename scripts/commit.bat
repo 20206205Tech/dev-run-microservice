@@ -15,9 +15,7 @@ for /D %%F in ("%ROOT_DIR%\*") do (
         pushd "%%F"
         
         :: Chạy 1 lần (trừ khi bạn cố tình muốn chạy 2 lần)
-        git nghia-git-commit-no-verify
-        
-        git nghia-git-commit-no-verify
+        git nghia-git-commit-no-verify     &&          git nghia-git-commit-no-verify
         
         popd
     )

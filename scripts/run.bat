@@ -37,8 +37,23 @@ cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
 start "" cmd /c "code ."
 timeout /t 50 /nobreak >nul
 
+
+
+
+
+@REM echo Mo: code-persona-service
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
+@REM start "" cmd /c "code ."
+@REM timeout /t 50 /nobreak >nul
+
+@REM echo Mo: code-persona-service
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
+@REM start "" cmd /c "code ."
+@REM timeout /t 50 /nobreak >nul
+
+
+
+
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-phapdien-service"
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-vbplnew-service"
 
