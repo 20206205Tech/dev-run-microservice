@@ -20,7 +20,6 @@ timeout /t 10 /nobreak >nul
 cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service" 
 start "" cmd /c "code ."
 timeout /t 50 /nobreak >nul
-
 cd /d "C:\Users\Admin\Documents\GitHub\code-conversation-service"
 start "" cmd /c "code ."
 timeout /t 50 /nobreak >nul
@@ -28,7 +27,6 @@ timeout /t 50 /nobreak >nul
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 @REM start "" cmd /c "code ."
 @REM timeout /t 50 /nobreak >nul
-
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
 @REM start "" cmd /c "code ."
 @REM timeout /t 50 /nobreak >nul
@@ -37,10 +35,11 @@ timeout /t 50 /nobreak >nul
 
 
 
+
+
 cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
 start "" cmd /c "code ."
 timeout /t 50 /nobreak >nul
-
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
 @REM start "" cmd /c "code ."
 @REM timeout /t 50 /nobreak >nul
@@ -50,6 +49,16 @@ timeout /t 50 /nobreak >nul
 
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-phapdien-service"
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-vbplnew-service"
+
+
+
+
+
+
+
+
+
+
 
 cd /d "C:\Users\Admin\Documents\GitHub\code-fe-ui"
 start "" cmd /c "code ."
