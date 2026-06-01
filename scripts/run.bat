@@ -33,12 +33,12 @@ timeout /t 50 /nobreak
 @REM start "" cmd /c " code . "
 @REM timeout /t 50 /nobreak
 
-@REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
-@REM start "" cmd /c " code . "
-@REM timeout /t 50 /nobreak
-@REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
-@REM start "" cmd /c " code . "
-@REM timeout /t 50 /nobreak
+cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
+start "" cmd /c " code . "
+timeout /t 50 /nobreak
+cd /d "C:\Users\Admin\Documents\GitHub\code-document-worker"
+start "" cmd /c " code . "
+timeout /t 50 /nobreak
 
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-phapdien-service"
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-vbplnew-service"
