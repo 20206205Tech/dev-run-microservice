@@ -19,19 +19,23 @@ cd /d "C:\Users\Admin\Desktop\Nghia\gitlab\vuvannghia\note\vuvannghia-note\data"
 start "" cmd /c " code . "
 timeout /t 10 /nobreak
 
-@REM cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service" 
-@REM start "" cmd /c " code . "
-@REM timeout /t 50 /nobreak
-cd /d "C:\Users\Admin\Documents\GitHub\code-conversation-service"
+cd /d "C:\Users\Admin\Documents\GitHub\code-payment-service" 
+start "" cmd /c " code . "
+timeout /t 50 /nobreak
+cd /d "C:\Users\Admin\Desktop\vibe\code-conversation-service"
+@REM cd /d "C:\Users\Admin\Documents\GitHub\code-conversation-service"
 start "" cmd /c " code . "
 timeout /t 50 /nobreak
 
-cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
+
+
+cd /d "C:\Users\Admin\Desktop\vibe\code-chatbot-service"
+@REM cd /d "C:\Users\Admin\Documents\GitHub\code-chatbot-service"
 start "" cmd /c " code . "
 timeout /t 50 /nobreak
-@REM cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
-@REM start "" cmd /c " code . "
-@REM timeout /t 50 /nobreak
+cd /d "C:\Users\Admin\Documents\GitHub\code-persona-service"
+start "" cmd /c " code . "
+timeout /t 50 /nobreak
 
 @REM cd /d "C:\Users\Admin\Documents\GitHub\code-document-service"
 @REM start "" cmd /c " code . "
@@ -43,7 +47,8 @@ timeout /t 50 /nobreak
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-phapdien-service"
 @REM cd /d "C:\Users\Admin\Documents\GitHub\data-pipeline-vbplnew-service"
 
-cd /d "C:\Users\Admin\Documents\GitHub\code-fe-ui"
+cd /d "C:\Users\Admin\Desktop\vibe\code-fe-ui"
+@REM cd /d "C:\Users\Admin\Documents\GitHub\code-fe-ui"
 start "" cmd /c " code . "
 timeout /t 50 /nobreak
 start http://localhost:3000
